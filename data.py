@@ -1,3 +1,6 @@
+google_account_username = "mannarkkad.pkd@gteceducation.com"
+google_account_password = "mkd@3048"
+
 contacts = [
 			{"name": "Chalava CDS - Shiny", "code": "+91", "phone": "9048479187"},
 			{"name": "Uppukulam CDS - Hafsa", "code": "+91", "phone": "9656710860"},
