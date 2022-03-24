@@ -42,12 +42,14 @@ for contact in data.contacts:
 		assert(driver.find_element(By.ID,"contactName").get_attribute('innerHTML') == contact["name"])
 	except Exception as e:
 		print(">>> WARNING :::: By Name ::::", driver.find_element(By.ID,"contactName").get_attribute('innerHTML'))
+		warnings.append(contact["name"] + "-" + contact["phone"])
 
 	# verify saved contact number
 	try:
 		assert(len(driver.find_elements(By.XPATH, "//a[@href='tel:" + contact["code"] + contact["phone"] + "']")) > 0)
 	except Exception as e:
 		print(">>> WARNING :::: By Phone ::::", len(driver.find_elements(By.XPATH, "//a[@href='tel:" + contact["code"] + contact["phone"] + "']")))
+		warnings.append(contact["name"] + "-" + contact["phone"])
 
 	# confirmation of successful loop
 	print(">>> ADDED ::::", contact["name"], "-", contact["code"], contact["phone"])
